@@ -17,6 +17,7 @@
 		FA847BBF23AE2BF300E5B62E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BBE23AE2BF300E5B62E /* MainTabBarController.swift */; };
 		FA847BC123AE314A00E5B62E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BC023AE314A00E5B62E /* SearchViewController.swift */; };
 		FA847BC323AE679500E5B62E /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BC223AE679500E5B62E /* SearchResponse.swift */; };
+		FA847BC523AE7B0900E5B62E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BC423AE7B0900E5B62E /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		FA847BBE23AE2BF300E5B62E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FA847BC023AE314A00E5B62E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FA847BC223AE679500E5B62E /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		FA847BC423AE7B0900E5B62E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		FC7452C38CA81238604D8B10 /* Pods-MyAppleMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAppleMusic.release.xcconfig"; path = "Target Support Files/Pods-MyAppleMusic/Pods-MyAppleMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 				FA847BAC23AE2BB600E5B62E /* SceneDelegate.swift */,
 				FA847BC023AE314A00E5B62E /* SearchViewController.swift */,
 				FA847BC223AE679500E5B62E /* SearchResponse.swift */,
+				FA847BC423AE7B0900E5B62E /* NetworkService.swift */,
 				FA847BAE23AE2BB600E5B62E /* ViewController.swift */,
 				FA847BBE23AE2BF300E5B62E /* MainTabBarController.swift */,
 				FA847BB023AE2BB600E5B62E /* Main.storyboard */,
@@ -221,6 +224,7 @@
 				FA847BAB23AE2BB600E5B62E /* AppDelegate.swift in Sources */,
 				FA847BBF23AE2BF300E5B62E /* MainTabBarController.swift in Sources */,
 				FA847BAD23AE2BB600E5B62E /* SceneDelegate.swift in Sources */,
+				FA847BC523AE7B0900E5B62E /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
