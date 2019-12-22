@@ -15,9 +15,17 @@
 		FA847BB423AE2BB900E5B62E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA847BB323AE2BB900E5B62E /* Assets.xcassets */; };
 		FA847BB723AE2BB900E5B62E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA847BB523AE2BB900E5B62E /* LaunchScreen.storyboard */; };
 		FA847BBF23AE2BF300E5B62E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BBE23AE2BF300E5B62E /* MainTabBarController.swift */; };
-		FA847BC123AE314A00E5B62E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BC023AE314A00E5B62E /* SearchViewController.swift */; };
+		FA847BC123AE314A00E5B62E /* SearchMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BC023AE314A00E5B62E /* SearchMusicViewController.swift */; };
 		FA847BC323AE679500E5B62E /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BC223AE679500E5B62E /* SearchResponse.swift */; };
 		FA847BC523AE7B0900E5B62E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BC423AE7B0900E5B62E /* NetworkService.swift */; };
+		FA847BDD23AEC86D00E5B62E /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BD623AEC86D00E5B62E /* SearchPresenter.swift */; };
+		FA847BDE23AEC86D00E5B62E /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BD723AEC86D00E5B62E /* SearchWorker.swift */; };
+		FA847BDF23AEC86D00E5B62E /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BD823AEC86D00E5B62E /* SearchRouter.swift */; };
+		FA847BE023AEC86D00E5B62E /* SearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BD923AEC86D00E5B62E /* SearchModels.swift */; };
+		FA847BE123AEC86D00E5B62E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BDA23AEC86D00E5B62E /* SearchViewController.swift */; };
+		FA847BE223AEC86D00E5B62E /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BDB23AEC86D00E5B62E /* SearchInteractor.swift */; };
+		FA847BE523AECADA00E5B62E /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA847BE423AECADA00E5B62E /* SearchViewController.storyboard */; };
+		FA847BE723AECDB700E5B62E /* UIViewControlller + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BE623AECDB700E5B62E /* UIViewControlller + Storyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +40,17 @@
 		FA847BB623AE2BB900E5B62E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA847BB823AE2BB900E5B62E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA847BBE23AE2BF300E5B62E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		FA847BC023AE314A00E5B62E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FA847BC023AE314A00E5B62E /* SearchMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMusicViewController.swift; sourceTree = "<group>"; };
 		FA847BC223AE679500E5B62E /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		FA847BC423AE7B0900E5B62E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		FA847BD623AEC86D00E5B62E /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		FA847BD723AEC86D00E5B62E /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
+		FA847BD823AEC86D00E5B62E /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		FA847BD923AEC86D00E5B62E /* SearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModels.swift; sourceTree = "<group>"; };
+		FA847BDA23AEC86D00E5B62E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FA847BDB23AEC86D00E5B62E /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		FA847BE423AECADA00E5B62E /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
+		FA847BE623AECDB700E5B62E /* UIViewControlller + Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControlller + Storyboard.swift"; sourceTree = "<group>"; };
 		FC7452C38CA81238604D8B10 /* Pods-MyAppleMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAppleMusic.release.xcconfig"; path = "Target Support Files/Pods-MyAppleMusic/Pods-MyAppleMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,17 +106,49 @@
 			children = (
 				FA847BAA23AE2BB600E5B62E /* AppDelegate.swift */,
 				FA847BAC23AE2BB600E5B62E /* SceneDelegate.swift */,
-				FA847BC023AE314A00E5B62E /* SearchViewController.swift */,
+				FA847BD523AEC80900E5B62E /* Services */,
+				FA847BC623AEC79D00E5B62E /* Search */,
+				FA847BC023AE314A00E5B62E /* SearchMusicViewController.swift */,
 				FA847BC223AE679500E5B62E /* SearchResponse.swift */,
-				FA847BC423AE7B0900E5B62E /* NetworkService.swift */,
 				FA847BAE23AE2BB600E5B62E /* ViewController.swift */,
 				FA847BBE23AE2BF300E5B62E /* MainTabBarController.swift */,
 				FA847BB023AE2BB600E5B62E /* Main.storyboard */,
+				FA847BE823AECDCD00E5B62E /* Helpers */,
 				FA847BB323AE2BB900E5B62E /* Assets.xcassets */,
 				FA847BB523AE2BB900E5B62E /* LaunchScreen.storyboard */,
 				FA847BB823AE2BB900E5B62E /* Info.plist */,
 			);
 			path = MyAppleMusic;
+			sourceTree = "<group>";
+		};
+		FA847BC623AEC79D00E5B62E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FA847BE423AECADA00E5B62E /* SearchViewController.storyboard */,
+				FA847BDA23AEC86D00E5B62E /* SearchViewController.swift */,
+				FA847BD923AEC86D00E5B62E /* SearchModels.swift */,
+				FA847BDB23AEC86D00E5B62E /* SearchInteractor.swift */,
+				FA847BD623AEC86D00E5B62E /* SearchPresenter.swift */,
+				FA847BD723AEC86D00E5B62E /* SearchWorker.swift */,
+				FA847BD823AEC86D00E5B62E /* SearchRouter.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		FA847BD523AEC80900E5B62E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA847BC423AE7B0900E5B62E /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FA847BE823AECDCD00E5B62E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FA847BE623AECDB700E5B62E /* UIViewControlller + Storyboard.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +214,7 @@
 				FA847BB723AE2BB900E5B62E /* LaunchScreen.storyboard in Resources */,
 				FA847BB423AE2BB900E5B62E /* Assets.xcassets in Resources */,
 				FA847BB223AE2BB600E5B62E /* Main.storyboard in Resources */,
+				FA847BE523AECADA00E5B62E /* SearchViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,12 +267,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA847BC123AE314A00E5B62E /* SearchViewController.swift in Sources */,
+				FA847BC123AE314A00E5B62E /* SearchMusicViewController.swift in Sources */,
 				FA847BAF23AE2BB600E5B62E /* ViewController.swift in Sources */,
 				FA847BC323AE679500E5B62E /* SearchResponse.swift in Sources */,
+				FA847BE223AEC86D00E5B62E /* SearchInteractor.swift in Sources */,
 				FA847BAB23AE2BB600E5B62E /* AppDelegate.swift in Sources */,
 				FA847BBF23AE2BF300E5B62E /* MainTabBarController.swift in Sources */,
+				FA847BE723AECDB700E5B62E /* UIViewControlller + Storyboard.swift in Sources */,
+				FA847BDE23AEC86D00E5B62E /* SearchWorker.swift in Sources */,
+				FA847BE123AEC86D00E5B62E /* SearchViewController.swift in Sources */,
+				FA847BDF23AEC86D00E5B62E /* SearchRouter.swift in Sources */,
+				FA847BE023AEC86D00E5B62E /* SearchModels.swift in Sources */,
 				FA847BAD23AE2BB600E5B62E /* SceneDelegate.swift in Sources */,
+				FA847BDD23AEC86D00E5B62E /* SearchPresenter.swift in Sources */,
 				FA847BC523AE7B0900E5B62E /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
