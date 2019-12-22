@@ -89,8 +89,8 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: TrackCell.reuseId, for: indexPath) as! TrackCell
         let cellViewModel = searchViewModel.cells[indexPath.row]
-        cell.trackImageView.backgroundColor = .red
-        print("cellViewModel.previewUrl:", cellViewModel.previewUrl)
+        //cell.trackImageView.backgroundColor = .red
+        //print("cellViewModel.previewUrl:", cellViewModel.previewUrl)
         cell.set(viewModel: cellViewModel)
         return cell
     }
