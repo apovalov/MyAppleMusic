@@ -34,7 +34,7 @@ class TrackDetailView: UIView {
     @IBOutlet weak var trackTitleLabel: UILabel!
     @IBOutlet weak var authorTitleLabel: UILabel!
     @IBOutlet weak var playPauseButton: UIButton!
-    @IBOutlet weak var volumeSliderConnect: UISlider!
+    @IBOutlet weak var volumeSlider: UISlider!
     
     // MARK: - IBActions
     
@@ -43,9 +43,17 @@ class TrackDetailView: UIView {
     }
     
     @IBAction func handleCurrentTimeSlider(_ sender: Any) {
+        let percentage = cureentTimeSlider.value
+        
+        guard let duration = player.currentItem?.duration else { return }
+        let durationInSeconds = CMTimeGetSeconds(duration)
+        let seekTimeInSeconds = Float64(percentage) * durationInSeconds
+        let seekTime = CMTimeMakeWithSeconds(seekTimeInSeconds, preferredTimescale: 1)
+        player.seek(to: seekTime)
     }
     
     @IBAction func handleVolumeSlider(_ sender: Any) {
+        player.volume = volumeSlider.value
     }
     
     @IBAction func previousTrack(_ sender: Any) {
@@ -117,8 +125,17 @@ class TrackDetailView: UIView {
             let durationTime = self?.player.currentItem?.duration
             let currentDurationTimeText = ((durationTime ?? CMTimeMake(value: 1, timescale: 1)) - time).toDisplayString()
             self?.durationLabel.text = currentDurationTimeText
+            self?.updateCurrentTimeSlider()
         }
     }
+    
+    private func updateCurrentTimeSlider() {
+        let currentTimeSeconds = CMTimeGetSeconds(player.currentTime())
+        let duartionSeconds = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(value: 1, timescale: 1))
+        let percentage = currentTimeSeconds / duartionSeconds
+        self.cureentTimeSlider.value = Float(percentage)
+    }
+    
     
     deinit {
         print("TrackDetailView memory being reclaimed")

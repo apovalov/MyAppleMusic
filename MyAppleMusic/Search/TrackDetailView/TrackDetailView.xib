@@ -150,7 +150,7 @@
                 <outlet property="playPauseButton" destination="4Yl-3s-LBG" id="LS9-sJ-HrS"/>
                 <outlet property="trackImageView" destination="xbV-in-aQ1" id="ayx-Uw-tgd"/>
                 <outlet property="trackTitleLabel" destination="hky-G5-GV2" id="QBu-5A-ZZj"/>
-                <outlet property="volumeSliderConnect" destination="CzB-f0-AT9" id="ETk-hZ-Sys"/>
+                <outlet property="volumeSlider" destination="CzB-f0-AT9" id="ETk-hZ-Sys"/>
             </connections>
             <point key="canvasLocation" x="81" y="121"/>
         </view>
