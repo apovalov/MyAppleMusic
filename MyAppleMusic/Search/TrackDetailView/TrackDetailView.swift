@@ -44,7 +44,10 @@ class TrackDetailView: UIView {
     // MARK: - IBActions
     
     @IBAction func dragDownButtonTapped(_ sender: Any) {
-        self.removeFromSuperview()
+        
+        self.tabBarDelegate?.minimizeTrackDetailController()
+        //self.removeFromSuperview()
+        
     }
     
     @IBAction func handleCurrentTimeSlider(_ sender: Any) {
@@ -94,6 +97,7 @@ class TrackDetailView: UIView {
     }()
     
     weak var delegate: TrackMovingDelegate?
+    weak var tabBarDelegate: MainTabBarControllerDelegate?
     
     
     func set(viewModel: SearchViewModel.Cell) {
