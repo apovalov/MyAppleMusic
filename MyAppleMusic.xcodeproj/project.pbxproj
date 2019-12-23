@@ -29,6 +29,8 @@
 		FA847BEB23B00D2100E5B62E /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA847BEA23B00D2100E5B62E /* TrackCell.xib */; };
 		FA847BED23B00D3D00E5B62E /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BEC23B00D3D00E5B62E /* TrackCell.swift */; };
 		FA847BF123B026A600E5B62E /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BF023B026A600E5B62E /* FooterView.swift */; };
+		FA847BF423B0A65C00E5B62E /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BF323B0A65C00E5B62E /* TrackDetailView.swift */; };
+		FA847BF623B0A66900E5B62E /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA847BF523B0A66900E5B62E /* TrackDetailView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		FA847BEA23B00D2100E5B62E /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		FA847BEC23B00D3D00E5B62E /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		FA847BF023B026A600E5B62E /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		FA847BF323B0A65C00E5B62E /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
+		FA847BF523B0A66900E5B62E /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
 		FC7452C38CA81238604D8B10 /* Pods-MyAppleMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAppleMusic.release.xcconfig"; path = "Target Support Files/Pods-MyAppleMusic/Pods-MyAppleMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +133,7 @@
 		FA847BC623AEC79D00E5B62E /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				FA847BF223B0A62E00E5B62E /* TrackDetailView */,
 				FA847BEF23B0267D00E5B62E /* FooterView */,
 				FA847BE923B00D1000E5B62E /* Cell */,
 				FA847BE423AECADA00E5B62E /* SearchViewController.storyboard */,
@@ -182,6 +187,15 @@
 				FA847BF023B026A600E5B62E /* FooterView.swift */,
 			);
 			path = FooterView;
+			sourceTree = "<group>";
+		};
+		FA847BF223B0A62E00E5B62E /* TrackDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				FA847BF323B0A65C00E5B62E /* TrackDetailView.swift */,
+				FA847BF523B0A66900E5B62E /* TrackDetailView.xib */,
+			);
+			path = TrackDetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA847BB723AE2BB900E5B62E /* LaunchScreen.storyboard in Resources */,
+				FA847BF623B0A66900E5B62E /* TrackDetailView.xib in Resources */,
 				FA847BEB23B00D2100E5B62E /* TrackCell.xib in Resources */,
 				FA847BB423AE2BB900E5B62E /* Assets.xcassets in Resources */,
 				FA847BB223AE2BB600E5B62E /* Main.storyboard in Resources */,
@@ -316,6 +331,7 @@
 				FA847BE023AEC86D00E5B62E /* SearchModels.swift in Sources */,
 				FA847BAD23AE2BB600E5B62E /* SceneDelegate.swift in Sources */,
 				FA847BDD23AEC86D00E5B62E /* SearchPresenter.swift in Sources */,
+				FA847BF423B0A65C00E5B62E /* TrackDetailView.swift in Sources */,
 				FA847BC523AE7B0900E5B62E /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
