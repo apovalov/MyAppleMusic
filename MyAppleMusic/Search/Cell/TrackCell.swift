@@ -31,6 +31,7 @@ class TrackCell: UITableViewCell {
     }
     
     func set(viewModel: TrackCellViewModel) {
+        self.endEditing(true)
         trackNameLabel.text =  viewModel.trackName
         artistNameLabel.text =  viewModel.artistName
         collectionNameLabel.text =  viewModel.collectionName
@@ -38,6 +39,7 @@ class TrackCell: UITableViewCell {
         guard let url = URL(string: viewModel.iconUrlString ?? "") else { return }
         trackImageView.sd_setImage(with: url, completed: nil)
     }
+    
     
     
     override func prepareForReuse() {
