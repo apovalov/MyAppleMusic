@@ -31,6 +31,7 @@
 		FA847BF123B026A600E5B62E /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BF023B026A600E5B62E /* FooterView.swift */; };
 		FA847BF423B0A65C00E5B62E /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BF323B0A65C00E5B62E /* TrackDetailView.swift */; };
 		FA847BF623B0A66900E5B62E /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA847BF523B0A66900E5B62E /* TrackDetailView.xib */; };
+		FA847BF823B0F49A00E5B62E /* CMTime + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BF723B0F49A00E5B62E /* CMTime + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		FA847BF023B026A600E5B62E /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		FA847BF323B0A65C00E5B62E /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		FA847BF523B0A66900E5B62E /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
+		FA847BF723B0F49A00E5B62E /* CMTime + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime + Extension.swift"; sourceTree = "<group>"; };
 		FC7452C38CA81238604D8B10 /* Pods-MyAppleMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAppleMusic.release.xcconfig"; path = "Target Support Files/Pods-MyAppleMusic/Pods-MyAppleMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				FA847BE623AECDB700E5B62E /* UIViewControlller + Storyboard.swift */,
+				FA847BF723B0F49A00E5B62E /* CMTime + Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				FA847BE223AEC86D00E5B62E /* SearchInteractor.swift in Sources */,
 				FA847BAB23AE2BB600E5B62E /* AppDelegate.swift in Sources */,
 				FA847BF123B026A600E5B62E /* FooterView.swift in Sources */,
+				FA847BF823B0F49A00E5B62E /* CMTime + Extension.swift in Sources */,
 				FA847BED23B00D3D00E5B62E /* TrackCell.swift in Sources */,
 				FA847BBF23AE2BF300E5B62E /* MainTabBarController.swift in Sources */,
 				FA847BE723AECDB700E5B62E /* UIViewControlller + Storyboard.swift in Sources */,

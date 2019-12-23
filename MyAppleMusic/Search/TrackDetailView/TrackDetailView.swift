@@ -12,6 +12,21 @@ import AVKit
 
 class TrackDetailView: UIView {
     
+    // MARK: - AwakeFromNib
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let scale: CGFloat = 0.8
+        trackImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
+        trackImageView.layer.cornerRadius = 5
+        
+        
+        trackImageView.backgroundColor = .red
+    }
+    
+    // MARK: - Otlets
+    
     @IBOutlet weak var trackImageView: UIImageView!
     @IBOutlet weak var cureentTimeSlider: UISlider!
     @IBOutlet weak var currentTimeLabel: UILabel!
@@ -21,7 +36,8 @@ class TrackDetailView: UIView {
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var volumeSliderConnect: UISlider!
     
-
+    // MARK: - IBActions
+    
     @IBAction func dragDownButtonTapped(_ sender: Any) {
         self.removeFromSuperview()
     }
@@ -42,12 +58,15 @@ class TrackDetailView: UIView {
         if player.timeControlStatus == .paused {
             player.play()
             playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            enlargeTrackImageView()
         } else {
             player.pause()
             playPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            reduceTrackImageView()
         }
     }
     
+    // MARK: - IBActions
     
     let player: AVPlayer = {
         let avPlayer = AVPlayer()
@@ -55,23 +74,20 @@ class TrackDetailView: UIView {
         return avPlayer
     }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        trackImageView.backgroundColor = .red
-    }
-    
     
     func set(viewModel: SearchViewModel.Cell) {
         self.endEditing(true)
         trackTitleLabel.text = viewModel.trackName
         authorTitleLabel.text = viewModel.artistName
         playTrack(previewUrl: viewModel.previewUrl)
+        monitorStartTime()
+        observePlayerCurrentTime()
         let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
         guard let url = URL(string: string600 ?? "") else { return }
         trackImageView.sd_setImage(with: url, completed: nil)
         //print(string600)
     }
-     
+    
     
     private func playTrack(previewUrl: String?) {
         print("Пытаюсь включить трек по ссылке", previewUrl ?? "отсутствует")
@@ -82,6 +98,46 @@ class TrackDetailView: UIView {
         player.play()
     }
     
+    // MARK: - Time setup
+    
+    private func monitorStartTime() {
+        let time = CMTimeMake(value: 1, timescale: 3)
+        let times = [NSValue(time: time)]
+        
+        player.addBoundaryTimeObserver(forTimes: times, queue: .main) {
+            self.enlargeTrackImageView()
+        }
+    }
+    
+    private func observePlayerCurrentTime() {
+        let interval = CMTimeMake(value: 1, timescale: 2)
+        player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self] (time) in
+            self?.currentTimeLabel.text = time.toDisplayString()
+            
+            let durationTime = self?.player.currentItem?.duration
+            let currentDurationTimeText = ((durationTime ?? CMTimeMake(value: 1, timescale: 1)) - time).toDisplayString()
+            self?.durationLabel.text = currentDurationTimeText
+        }
+    }
+    
+    deinit {
+        print("TrackDetailView memory being reclaimed")
+    }
+    
+    // MARK: - Animations
+    
+    private func enlargeTrackImageView() {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut, animations: { [weak self] in
+            self?.trackImageView.transform = .identity
+        }, completion: nil)
+    }
+    
+    
+    private func reduceTrackImageView() {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+             let scale: CGFloat = 0.8
+            self.trackImageView.transform = CGAffineTransform(scaleX: scale, y: scale)        }, completion: nil)
+    }
     
     
 }
