@@ -13,6 +13,68 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dU-kB-Bjp">
+                    <rect key="frame" x="0.0" y="44" width="414" height="64"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rN0-Da-l6b">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="cLf-y5-LZc"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="b1W-y2-Wcj">
+                            <rect key="frame" x="8" y="8" width="398" height="48"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SonhImage" translatesAutoresizingMaskIntoConstraints="NO" id="1RJ-k5-EWl">
+                                    <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="48" id="4nH-uE-JpE"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXb-GK-YvC">
+                                    <rect key="frame" x="64" y="0.0" width="210" height="48"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udx-vm-Nvb">
+                                    <rect key="frame" x="290" y="0.0" width="44" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="jJi-9t-bcG"/>
+                                    </constraints>
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" image="pause"/>
+                                    <connections>
+                                        <action selector="playPauseAction:" destination="LYR-Ua-nbf" eventType="touchUpInside" id="N24-dR-1to"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bE-3N-uBB">
+                                    <rect key="frame" x="350" y="0.0" width="48" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="48" id="Inb-Tg-y9w"/>
+                                    </constraints>
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" image="Right"/>
+                                    <connections>
+                                        <action selector="nextTrack:" destination="LYR-Ua-nbf" eventType="touchUpInside" id="vrr-Jc-T28"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="rN0-Da-l6b" firstAttribute="top" secondItem="4dU-kB-Bjp" secondAttribute="top" id="0y7-sW-mNc"/>
+                        <constraint firstAttribute="trailing" secondItem="b1W-y2-Wcj" secondAttribute="trailing" constant="8" id="EYR-yQ-wgg"/>
+                        <constraint firstItem="rN0-Da-l6b" firstAttribute="leading" secondItem="4dU-kB-Bjp" secondAttribute="leading" id="dqi-MF-0HN"/>
+                        <constraint firstItem="b1W-y2-Wcj" firstAttribute="leading" secondItem="4dU-kB-Bjp" secondAttribute="leading" constant="8" id="itu-G1-EVv"/>
+                        <constraint firstAttribute="bottom" secondItem="b1W-y2-Wcj" secondAttribute="bottom" constant="8" id="jVF-45-bF6"/>
+                        <constraint firstAttribute="height" constant="64" id="rKo-hO-BIV"/>
+                        <constraint firstAttribute="trailing" secondItem="rN0-Da-l6b" secondAttribute="trailing" id="tMp-Gv-meJ"/>
+                        <constraint firstItem="b1W-y2-Wcj" firstAttribute="top" secondItem="4dU-kB-Bjp" secondAttribute="top" constant="8" id="zeh-eE-AHb"/>
+                    </constraints>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BdD-mD-rr4">
                     <rect key="frame" x="30" y="44" width="354" height="788"/>
                     <subviews>
@@ -136,10 +198,13 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="4dU-kB-Bjp" firstAttribute="top" secondItem="0hN-Ka-vlQ" secondAttribute="top" id="5ce-4w-HgQ"/>
                 <constraint firstItem="0hN-Ka-vlQ" firstAttribute="trailing" secondItem="BdD-mD-rr4" secondAttribute="trailing" constant="30" id="LsE-a8-aIH"/>
                 <constraint firstItem="0hN-Ka-vlQ" firstAttribute="bottom" secondItem="BdD-mD-rr4" secondAttribute="bottom" constant="30" id="UWP-gs-MbO"/>
                 <constraint firstItem="BdD-mD-rr4" firstAttribute="leading" secondItem="0hN-Ka-vlQ" secondAttribute="leading" constant="30" id="cSa-oR-j69"/>
+                <constraint firstItem="4dU-kB-Bjp" firstAttribute="leading" secondItem="0hN-Ka-vlQ" secondAttribute="leading" id="evd-g5-V8D"/>
                 <constraint firstItem="BdD-mD-rr4" firstAttribute="top" secondItem="0hN-Ka-vlQ" secondAttribute="top" id="fSR-fA-nM3"/>
+                <constraint firstItem="0hN-Ka-vlQ" firstAttribute="trailing" secondItem="4dU-kB-Bjp" secondAttribute="trailing" id="hPL-oy-xbH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="0hN-Ka-vlQ"/>
             <connections>
@@ -147,6 +212,12 @@
                 <outlet property="cureentTimeSlider" destination="w79-WF-qMc" id="wuG-85-MO9"/>
                 <outlet property="currentTimeLabel" destination="5a6-v5-n6L" id="r3p-BU-8u5"/>
                 <outlet property="durationLabel" destination="7fQ-b2-t1P" id="E3T-dz-INT"/>
+                <outlet property="maximizedStackView" destination="BdD-mD-rr4" id="Rsb-qo-qXA"/>
+                <outlet property="miniGoForwardButton" destination="7bE-3N-uBB" id="LA3-Rh-Etn"/>
+                <outlet property="miniPlayPauseButton" destination="udx-vm-Nvb" id="8s8-Ti-N6m"/>
+                <outlet property="miniTrackImageView" destination="1RJ-k5-EWl" id="cXq-Cm-e7h"/>
+                <outlet property="miniTrackTitleLabel" destination="IXb-GK-YvC" id="U8T-qw-jpp"/>
+                <outlet property="miniTrackView" destination="4dU-kB-Bjp" id="t7A-FC-if6"/>
                 <outlet property="playPauseButton" destination="4Yl-3s-LBG" id="LS9-sJ-HrS"/>
                 <outlet property="trackImageView" destination="xbV-in-aQ1" id="ayx-Uw-tgd"/>
                 <outlet property="trackTitleLabel" destination="hky-G5-GV2" id="QBu-5A-ZZj"/>
@@ -161,6 +232,7 @@
         <image name="IconMax" width="17" height="17"/>
         <image name="Left" width="34" height="20"/>
         <image name="Right" width="34" height="20"/>
+        <image name="SonhImage" width="236" height="236"/>
         <image name="pause" width="57" height="57"/>
     </resources>
 </document>

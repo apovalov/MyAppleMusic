@@ -25,12 +25,18 @@ class TrackDetailView: UIView {
         let scale: CGFloat = 0.8
         trackImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
         trackImageView.layer.cornerRadius = 5
-        
-        
-        trackImageView.backgroundColor = .red
     }
     
     // MARK: - Otlets
+    
+    @IBOutlet weak var miniTrackView: UIView!
+    @IBOutlet weak var miniGoForwardButton: UIButton!
+    @IBOutlet weak var maximizedStackView: UIStackView!
+    @IBOutlet weak var miniTrackImageView: UIImageView!
+    @IBOutlet weak var miniTrackTitleLabel: UILabel!
+    @IBOutlet weak var miniPlayPauseButton: UIButton!
+    
+    
     
     @IBOutlet weak var trackImageView: UIImageView!
     @IBOutlet weak var cureentTimeSlider: UISlider!
@@ -80,10 +86,12 @@ class TrackDetailView: UIView {
         if player.timeControlStatus == .paused {
             player.play()
             playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            miniPlayPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
             enlargeTrackImageView()
         } else {
             player.pause()
             playPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            miniPlayPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
             reduceTrackImageView()
         }
     }
@@ -102,11 +110,15 @@ class TrackDetailView: UIView {
     
     func set(viewModel: SearchViewModel.Cell) {
         self.endEditing(true)
+        miniTrackTitleLabel.text = viewModel.trackName
+        
         trackTitleLabel.text = viewModel.trackName
         authorTitleLabel.text = viewModel.artistName
         playTrack(previewUrl: viewModel.previewUrl)
         monitorStartTime()
         observePlayerCurrentTime()
+        playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+        miniPlayPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
         let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
         guard let url = URL(string: string600 ?? "") else { return }
         trackImageView.sd_setImage(with: url, completed: nil)
@@ -118,6 +130,7 @@ class TrackDetailView: UIView {
         print("Пытаюсь включить трек по ссылке", previewUrl ?? "отсутствует")
         
         guard let url = URL(string: previewUrl ?? "") else { return }
+        miniTrackImageView.sd_setImage(with: url, completed: nil)
         let playerItem = AVPlayerItem(url: url)
         player.replaceCurrentItem(with: playerItem)
         player.play()
