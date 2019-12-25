@@ -23,14 +23,21 @@ class TrackCell: UITableViewCell {
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var collectionNameLabel: UILabel!
     
-    
     static let reuseId = "TrackCell"
+    
+    var cell: SearchViewModel.Cell?
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func set(viewModel: TrackCellViewModel) {
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+    }
+    
+    func set(viewModel: SearchViewModel.Cell) {
+        self.cell = viewModel
         self.endEditing(true)
         trackNameLabel.text =  viewModel.trackName
         artistNameLabel.text =  viewModel.artistName
@@ -41,10 +48,21 @@ class TrackCell: UITableViewCell {
     }
     
     
+    @IBAction func addTrackAction(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: cell, requiringSecureCoding: false) {
+            print("Успешно!")
+            defaults.set(savedData, forKey: "tracks")
+        }
+    }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
+    @IBAction func showInfoAction(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        if let savedTrack = defaults.object(forKey: "tracks") as? Data {
+            if let decodedTracks = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedTrack) as? SearchViewModel.Cell {
+                print("decodedTracks.trackName: \(decodedTracks.trackName)")
+            }
+        }
         
     }
 }
