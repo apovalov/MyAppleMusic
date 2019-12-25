@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 import AVKit
 
-protocol TrackMovingDelegate: class {
+protocol TrackMovingDelegate {
     func moveBackFormPreviousTrack() -> SearchViewModel.Cell?
     func moveForwardFormPreviousTrack() -> SearchViewModel.Cell?
 }
@@ -107,7 +107,7 @@ class TrackDetailView: UIView {
         return avPlayer
     }()
     
-    weak var delegate: TrackMovingDelegate?
+    var delegate: TrackMovingDelegate?
     weak var tabBarDelegate: MainTabBarControllerDelegate?
     
     
