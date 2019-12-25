@@ -10,7 +10,12 @@ import SwiftUI
 import URLImage
 
 struct Library: View {
-    var tracks = UserDefaults.standard.savedTracks()
+    
+    @State var tracks = UserDefaults.standard.savedTracks()
+    @State private var showingAlert = false
+    @State private var track: SearchViewModel.Cell!
+    
+    var tabBarDelegate: MainTabBarControllerDelegate?
     
     var body: some View {
         NavigationView {
@@ -18,7 +23,8 @@ struct Library: View {
                 GeometryReader { geometry in
                     HStack {
                         Button(action: {
-                            print("12345")
+                            self.track = self.tracks[0]
+                            self.tabBarDelegate?.maximizeTrackDetailController(viewModel: self.track)
                         }, label: {
                             Image(systemName: "play.fill")
                                 .frame(width: geometry.size.width / 2 - 10, height: 50)
@@ -27,7 +33,7 @@ struct Library: View {
                                 .cornerRadius(10)
                         })
                         Button(action: {
-                            print("12345")
+                            self.tracks = UserDefaults.standard.savedTracks()
                         }, label: {
                             Image(systemName: "arrow.2.circlepath")
                                 .frame(width: geometry.size.width / 2 - 10, height: 50)
@@ -41,14 +47,48 @@ struct Library: View {
                 Divider().padding(.leading).padding(.trailing)
                 Spacer()
                 
-                List(tracks) { track in
-                    LibraryCell(cell: track)
+                List{
+                    ForEach(tracks) { track in
+                        LibraryCell(cell: track).gesture(LongPressGesture().onEnded { _tracks in
+                            print("Pressed")
+                            self.track = track
+                            self.showingAlert = true
+                        }
+                            .simultaneously(with: TapGesture().onEnded { _ in
+                                self.track = track
+                                self.tabBarDelegate?.maximizeTrackDetailController(viewModel: self.track)
+                            }))
+                    }.onDelete(perform: delete)
                 }
-            }
+            }.actionSheet(isPresented: $showingAlert, content: {
+                ActionSheet(title: Text("Are you sure you wanted to delete this track?"), buttons: [.destructive(Text("Delete"), action: {
+                    print("Delete\(self.track.trackName)")
+                    self.delete(track: self.track)
+                }), .cancel() ])
+            })
                 
-            .navigationBarTitle("Library")
+                .navigationBarTitle("Library")
         }
     }
+    
+    func delete(at offsets: IndexSet) {
+        tracks.remove(atOffsets: offsets)
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: tracks, requiringSecureCoding: false) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: UserDefaults.favouriteTrackKey)
+        }
+    }
+    
+    func delete(track: SearchViewModel.Cell) {
+        let index = tracks.firstIndex(of: track)
+        guard let myIndex = index else { return }
+        tracks.remove(at: myIndex)
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: tracks, requiringSecureCoding: false) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: UserDefaults.favouriteTrackKey)
+        }
+    }
+    
 }
 
 
@@ -60,7 +100,7 @@ struct LibraryCell: View {
             //Image("SonhImage").resizable().frame(width: 60, height: 60).cornerRadius(2)
             URLImage(URL(string: cell.iconUrlString ?? "")!, content: {
                 $0.image
-                .resizable()
+                    .resizable()
             }).frame(width: 60, height: 60).cornerRadius(2)
             VStack(alignment: .leading) {
                 Text("\(cell.trackName)")
