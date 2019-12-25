@@ -49,17 +49,10 @@
                             <action selector="addTrackAction:" destination="qTK-Ft-mJP" eventType="touchUpInside" id="NIC-ex-Psk"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Bq-wK-iub">
-                        <rect key="frame" x="332" y="12" width="46" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                        <connections>
-                            <action selector="showInfoAction:" destination="qTK-Ft-mJP" eventType="touchUpInside" id="cmb-xI-Zcy"/>
-                        </connections>
-                    </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="addtrackOutlet" destination="3LV-eS-GH2" id="tG0-VP-PJq"/>
                 <outlet property="artistNameLabel" destination="eMY-zw-Mh9" id="5tV-Z4-RXK"/>
                 <outlet property="collectionNameLabel" destination="7Fu-e9-qZ1" id="Oxg-7V-6jT"/>
                 <outlet property="trackImageView" destination="wzB-y0-tyC" id="fqZ-Fz-FXf"/>

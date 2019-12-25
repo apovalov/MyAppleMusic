@@ -7,14 +7,15 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct Library: View {
+    var tracks = UserDefaults.standard.savedTracks()
+    
     var body: some View {
         NavigationView {
             VStack {
                 GeometryReader { geometry in
-                    
-                    
                     HStack {
                         Button(action: {
                             print("12345")
@@ -40,10 +41,8 @@ struct Library: View {
                 Divider().padding(.leading).padding(.trailing)
                 Spacer()
                 
-                List {
-                    LibraryCell()
-                    Text("Second")
-                    Text("Third")
+                List(tracks) { track in
+                    LibraryCell(cell: track)
                 }
             }
                 
@@ -54,13 +53,18 @@ struct Library: View {
 
 
 struct LibraryCell: View {
+    var cell: SearchViewModel.Cell
     
     var body: some View {
         HStack {
-            Image("SonhImage").resizable().frame(width: 60, height: 60).cornerRadius(2)
-            VStack {
-                Text("hello")
-                Text("hello")
+            //Image("SonhImage").resizable().frame(width: 60, height: 60).cornerRadius(2)
+            URLImage(URL(string: cell.iconUrlString ?? "")!, content: {
+                $0.image
+                .resizable()
+            }).frame(width: 60, height: 60).cornerRadius(2)
+            VStack(alignment: .leading) {
+                Text("\(cell.trackName)")
+                Text("\(cell.artistName)")
             }
         }
     }
