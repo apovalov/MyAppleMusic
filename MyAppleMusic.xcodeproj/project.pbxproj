@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8F674B649B0150028A5220A3 /* Pods_MyAppleMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F4077788B03824AA1A8020 /* Pods_MyAppleMusic.framework */; };
 		FA81288B23B158DF006DED71 /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81288A23B158DF006DED71 /* Nib.swift */; };
+		FA81288D23B3C6AC006DED71 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81288C23B3C6AC006DED71 /* Library.swift */; };
 		FA847BAB23AE2BB600E5B62E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BAA23AE2BB600E5B62E /* AppDelegate.swift */; };
 		FA847BAD23AE2BB600E5B62E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BAC23AE2BB600E5B62E /* SceneDelegate.swift */; };
 		FA847BAF23AE2BB600E5B62E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA847BAE23AE2BB600E5B62E /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 		40EA93C776240A1EA1ADBEEE /* Pods-MyAppleMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAppleMusic.debug.xcconfig"; path = "Target Support Files/Pods-MyAppleMusic/Pods-MyAppleMusic.debug.xcconfig"; sourceTree = "<group>"; };
 		F7F4077788B03824AA1A8020 /* Pods_MyAppleMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyAppleMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA81288A23B158DF006DED71 /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
+		FA81288C23B3C6AC006DED71 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		FA847BA723AE2BB600E5B62E /* MyAppleMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAppleMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA847BAA23AE2BB600E5B62E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA847BAC23AE2BB600E5B62E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				FA847BC023AE314A00E5B62E /* SearchMusicViewController.swift */,
 				FA847BAE23AE2BB600E5B62E /* ViewController.swift */,
 				FA847BBE23AE2BF300E5B62E /* MainTabBarController.swift */,
+				FA81288C23B3C6AC006DED71 /* Library.swift */,
 				FA847BB023AE2BB600E5B62E /* Main.storyboard */,
 				FA847BE823AECDCD00E5B62E /* Helpers */,
 				FA847BB323AE2BB900E5B62E /* Assets.xcassets */,
@@ -339,6 +342,7 @@
 				FA847BE023AEC86D00E5B62E /* SearchModels.swift in Sources */,
 				FA847BAD23AE2BB600E5B62E /* SceneDelegate.swift in Sources */,
 				FA847BDD23AEC86D00E5B62E /* SearchPresenter.swift in Sources */,
+				FA81288D23B3C6AC006DED71 /* Library.swift in Sources */,
 				FA847BF423B0A65C00E5B62E /* TrackDetailView.swift in Sources */,
 				FA847BC523AE7B0900E5B62E /* NetworkService.swift in Sources */,
 			);
